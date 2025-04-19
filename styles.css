@@ -79,13 +79,13 @@ ul#simple-menu li a.current:hover{
 	width: 100%;
 	max-width: 540px;
 	border-collapse: collapse;
-	font-family: 'Courier New', Tahoma, Geneva, Verdana, sans-serif;
+	font-family: 'Courier New', Courier, monospace;
 	margin: 20px 0;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
   .lineup-table thead {
-	background-color: #1e3a8a; /* dark blue */
+	background-color: #0b183c; /* dark blue */
 	color: white;
   }
   
