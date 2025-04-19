@@ -1,9 +1,10 @@
-body {
-    background-image: url(images/jerseytexture-2.jpg);
+body { 
+    /*   background-image: url(images/jerseytexture-2.jpg); -->  */
     background-repeat: no-repeat;
     background-position: right;
     background-attachment: fixed;
     background-size: auto;
+	background-color: aliceblue;
 
 }
   
