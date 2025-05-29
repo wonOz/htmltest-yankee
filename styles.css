@@ -78,6 +78,7 @@ ul#simple-menu li a.current:hover{
 .lineup-table {
 	width: auto;
 	max-width: 100%;
+	min-width: 480px;
 	border-collapse: collapse;
 	font-family: 'Courier New', Courier, monospace;
 	margin: 20px 0;
