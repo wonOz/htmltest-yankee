@@ -76,8 +76,8 @@ ul#simple-menu li a.current:hover{
 
 	/* Baseball lineup table styling */
 .lineup-table {
-	width: 100%;
-	max-width: 540px;
+	width: auto;
+	max-width: 100%;
 	border-collapse: collapse;
 	font-family: 'Courier New', Courier, monospace;
 	margin: 20px 0;
@@ -135,5 +135,4 @@ ul#simple-menu li a.current:hover{
   .schedule-table tbody tr:last-child td {
 	border-bottom: none;
   }
-  
-  
+
