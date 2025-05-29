@@ -86,7 +86,7 @@ ul#simple-menu li a.current:hover{
   }
   
   .lineup-table thead {
-	background: linear-gradient(90deg, #0b183c 60%, #2c3653 100%);
+	background: linear-gradient(190deg, #0b183c 60%, #2c3653 100%);
 	color: white;
 	box-shadow: 0 2px 6px rgba(0,0,0,0.08);
   }
