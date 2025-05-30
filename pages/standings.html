@@ -24,8 +24,8 @@
       </div>
     
 
-      <h1>America League East Standings</h1>
-      <table class="lineup-table">
+      <h1>American League East Standings</h1>
+      <table class="lineup-table" id="sortable-table">
         <thead>
           <tr>
             <th>Team</th>
@@ -132,6 +132,46 @@ window.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+
+  // Make table sortable
+  const table = document.getElementById('sortable-table');
+  const headers = table.querySelectorAll('th');
+  let sortDirection = Array(headers.length).fill(true); // true = asc, false = desc
+
+  headers.forEach((header, i) => {
+    header.style.cursor = 'pointer';
+    header.addEventListener('click', function() {
+      sortTableByColumn(table, i, sortDirection[i]);
+      sortDirection[i] = !sortDirection[i];
+    });
+  });
+
+  function sortTableByColumn(table, column, asc = true) {
+    const dirModifier = asc ? 1 : -1;
+    const tBody = table.tBodies[0];
+    const rows = Array.from(tBody.querySelectorAll('tr'));
+    const isNumeric = column !== 0 && column !== 10;
+    const getCellValue = (row) => row.children[column].textContent.trim();
+    rows.sort((a, b) => {
+      let aVal = getCellValue(a);
+      let bVal = getCellValue(b);
+      if (isNumeric) {
+        aVal = parseFloat(aVal.replace(/[^\d.-]/g, ''));
+        bVal = parseFloat(bVal.replace(/[^\d.-]/g, ''));
+        aVal = isNaN(aVal) ? -Infinity : aVal;
+        bVal = isNaN(bVal) ? -Infinity : bVal;
+      }
+      if (aVal > bVal) return 1 * dirModifier;
+      if (aVal < bVal) return -1 * dirModifier;
+      return 0;
+    });
+    // Remove all rows
+    while (tBody.firstChild) {
+      tBody.removeChild(tBody.firstChild);
+    }
+    // Re-add sorted rows
+    tBody.append(...rows);
+  }
 });
 </script>
 </body>
